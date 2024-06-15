@@ -194,14 +194,6 @@ class NemoModel(BaseModel):
             data=json.dumps(request),
             headers={"Content-Type": "application/json"},
         ).json()
-        # # we need to remove the original prompt as nemo always returns it
-        # outputs = [None] * len(generations['sentences'])
-        # for idx, generation in enumerate(generations['sentences']):
-        #     outputs[idx] = {'generation': generation[len(prompts[idx]) :]}
-        # if remove_stop_phrases:
-        #     postprocess_output(outputs, stop_phrases)
-        # return outputs
-
         # we need to remove the original prompt as nemo always returns it
         outputs = [None] * len(generations['sentences'])
         for idx, generation in enumerate(generations['sentences']):
